@@ -1,0 +1,36 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    container_name: pay-it-mysql
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+    ports:
+      - "3307:3306"
+
+  web:
+    build: .
+    command: ["./bin/rails", "server", '-p', '3000', '-b', '0.0.0.0']
+    environment:
+      - RAILS_ENV=${RAILS_ENV}
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_POOL=${DATABASE_POOL}
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    env_file:
+      - '.env'
+
+volumes:
+  mysql_data: {}
