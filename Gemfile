@@ -26,4 +26,10 @@ end
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
+  gem "webdrivers", "~> 5.3", ">= 5.3.1"
+end
+
+group :development, :test do
+  gem "byebug", "~> 11.1", ">= 11.1.3"
+  gem "rspec-rails", "~> 6.1", ">= 6.1.1"
 end
