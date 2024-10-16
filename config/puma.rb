@@ -43,6 +43,9 @@ when "development"
   # Specifies a very generous `worker_timeout` so that the worker
   # isn't killed by Puma when suspended by a debugger.
   worker_timeout 3600
+else
+  # Default behavior for unspecified environments
+  puts "Unknown environment: #{rails_env}. Using default configuration."
 end
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
