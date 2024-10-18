@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 8.0.0.alpha", github: "rails/rails", branch: "main"
+gem "rails", "~> 8.0.0.beta1", github: "rails/rails", branch: "main"
 gem "sprockets-rails"
 gem "mysql2", "~> 0.5"
 gem "puma", ">= 5.0"
