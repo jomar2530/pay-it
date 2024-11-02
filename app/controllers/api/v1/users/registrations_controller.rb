@@ -7,7 +7,8 @@ module Api
 
         private
 
-        def respond_with(resource, _opts = {})
+        # SONAR recommended to remove the unused parameter '_opts', however, it is used in the method signature by devise gem
+        def respond_with(resource, _opts = {}) # NOSONAR
           if resource.persisted?
             @token = request.env["warden-jwt_auth.token"]
             headers["Authorization"] = @token if @token
