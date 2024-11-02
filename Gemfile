@@ -12,6 +12,11 @@ gem "redis", ">= 4.0.1"
 gem "tzinfo-data", platforms: %i[mswin mswin64 mingw x64_mingw jruby]
 gem "bootsnap", require: false
 
+gem 'active_model_serializers'
+gem 'devise'
+gem 'devise-jwt'
+gem 'rack-cors'
+
 group :development, :test do
   gem "debug", platforms: %i[mswin mswin64 mingw x64_mingw jruby]
   gem "brakeman", require: false
@@ -19,6 +24,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'awesome_print', '~> 1.9', '>= 1.9.2'
   gem "web-console"
   gem "spring"
 end
