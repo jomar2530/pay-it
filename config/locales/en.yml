@@ -29,3 +29,14 @@
 
 en:
   hello: "Hello world"
+  successful:
+    registration:
+      created: "User created successfully"
+
+  failure:
+    registration:
+      not_created: "User couldn't be created successfully"
+      email_already_exists: "Email already exists"
+      invalid_email: "Invalid email"
+      invalid_password: "Invalid password"
+      invalid_password_confirmation: "Invalid password confirmation"
