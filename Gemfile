@@ -31,5 +31,5 @@ end
 
 group :development, :test do
   gem "byebug", "~> 11.1", ">= 11.1.3"
-  gem "rspec-rails", "~> 7.0"
+  gem "rspec-rails", "~> 7.1"
 end
