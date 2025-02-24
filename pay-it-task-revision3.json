@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:796973477854:task-definition/pay-it-task:3",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:796973477854:task-definition/pay-it-task:4",
     "containerDefinitions": [
         {
             "name": "pay-it-repo",
@@ -21,16 +21,20 @@
             "volumesFrom": [],
             "secrets": [
                 {
-                    "name": "RAILS_MASTER_KEY",
-                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:796973477854:secret:pay-it-prod-fB1yaP:RAILS_MASTER_KEY"
-                },
-                {
                     "name": "DEVISE_JWT_SECRET_KEY",
                     "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:796973477854:secret:pay-it-prod-fB1yaP:DEVISE_JWT_SECRET_KEY"
                 },
                 {
                     "name": "RAILS_ENV",
                     "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:796973477854:secret:pay-it-prod-fB1yaP:RAILS_ENV"
+                },
+                {
+                    "name": "RAILS_MASTER_KEY",
+                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:796973477854:secret:pay-it-prod-fB1yaP:RAILS_MASTER_KEY"
+                },
+                {
+                    "name": "SECRET_KEY_BASE",
+                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:796973477854:secret:pay-it-prod-fB1yaP:SECRET_KEY_BASE"
                 }
             ],
             "ulimits": [],
@@ -53,7 +57,7 @@
     "taskRoleArn": "arn:aws:iam::796973477854:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::796973477854:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 3,
+    "revision": 4,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -105,7 +109,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-02-24T02:18:48.392Z",
+    "registeredAt": "2025-02-24T02:39:23.544Z",
     "registeredBy": "arn:aws:iam::796973477854:user/jomarAWSPracticeDev",
     "enableFaultInjection": false,
     "tags": []
